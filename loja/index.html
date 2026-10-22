@@ -80,9 +80,12 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin:24px 0}
 <div class="bar" id="bar"><div class="in"><div class="tot" id="tot"></div><a id="go" href="#">Pedir no WhatsApp</a></div></div>
 <script>
 const WA = '5511917291381';
-const CATS = [['tudo', 'Tudo'], ['beleza', 'Beleza'], ['financas', 'Finanças'], ['guias', 'Guias'], ['combos', 'Combos']];
+const CATS = [['tudo', 'Tudo'], ['concursos', 'Concursos'], ['beleza', 'Beleza'], ['financas', 'Finanças'], ['guias', 'Guias'], ['combos', 'Combos']];
 const AG = 'Agenda do dia, calendário do mês, clientes com retorno e aniversário, botão de WhatsApp com mensagem pronta, financeiro e calculadora de quanto cobrar.';
 const P = [
+  {id: 'tjsp', cat: 'concursos', name: 'Apostila Escrevente TJSP 2027', em: '', price: 39.9, img: 'img/tjsp.jpg', hot: 'novidade', desc: 'PDF de 200 páginas: Raio-X do edital 02/2026, resumos de todas as matérias, 182 questões inéditas no estilo VUNESP com gabarito comentado, guia da redação e plano de 20 semanas até a prova de 14/03/2027.'},
+  {id: 'planner', cat: 'concursos', name: 'Planner de Estudos para Concurso', em: '', price: 19.9, img: 'img/planner.jpg', desc: 'Planilha: edital com progresso por matéria, checklist com revisões em 1, 7 e 30 dias, registro de horas e acertos e painel de desempenho. Vem pronta para o TJSP e serve para qualquer concurso.'},
+  {id: 'combo-tjsp', cat: 'combos', name: 'Combo Concurso: Apostila TJSP + Planner', em: '', price: 49.9, was: 59.8, img: 'img/tjsp.jpg', desc: 'A Apostila Escrevente TJSP 2027 e o Planner de Estudos juntos, com desconto.'},
   {id: 'nail', cat: 'beleza', name: 'Agenda Nail Designer', em: '💅', price: 34.9, img: 'img/nail.jpg', desc: AG, hot: 'novidade'},
   {id: 'lash', cat: 'beleza', name: 'Agenda Lash Designer', em: '✨', price: 34.9, img: 'img/lash.jpg', desc: AG},
   {id: 'brow', cat: 'beleza', name: 'Agenda Designer de Sobrancelhas', em: '✨', price: 34.9, img: 'img/brow.jpg', desc: AG},
