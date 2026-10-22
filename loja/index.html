@@ -20,7 +20,7 @@ h1{font-family:'Dancing Script',cursive;font-size:46px;line-height:1;color:var(-
 .sub{color:var(--muted);margin:0 0 4px;font-size:15px}
 .how{display:flex;gap:10px;margin:18px 0 6px}
 .how div{flex:1;background:#fff;border:2px solid var(--soft);border-radius:18px;padding:10px 8px;text-align:center;font-size:12.5px}
-.how b{display:block;font-size:22px}
+.how b{display:flex;justify-content:center;margin-bottom:4px}
 .tabs{display:flex;gap:8px;overflow-x:auto;padding:14px 0 6px;position:sticky;top:0;background:linear-gradient(var(--bg),#fff7f5ee);z-index:5}
 .tabs button{flex:none;border:2px solid var(--soft);background:#fff;color:var(--deep);font:600 14px Poppins,Arial;border-radius:30px;padding:8px 16px;cursor:pointer}
 .tabs button.on{background:var(--main);border-color:var(--main);color:#fff}
@@ -60,11 +60,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin:24px 0}
 <header>
   <span class="logo">VALE O PREÇO?</span>
   <h1>Planilhas &amp; Guias</h1>
-  <p class="sub">Prontas para usar no celular ou no computador ✨</p>
+  <p class="sub">Prontas para usar no celular ou no computador</p>
   <div class="how">
-    <div><b>💖</b>Escolha o que quer</div>
-    <div><b>💬</b>Chame no WhatsApp com a lista pronta</div>
-    <div><b>⚡</b>Pague no Pix e receba na hora</div>
+    <div><b><svg viewBox="0 0 48 48" width="30" fill="none" stroke="#8E4A5A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="7" width="34" height="34" rx="8"/><path d="M15 25 l6 6 l12-14"/></svg></b>Escolha o que quer</div>
+    <div><b><svg viewBox="0 0 48 48" width="30" fill="none" stroke="#8E4A5A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M9 39 l2.5-8 A15 15 0 1 1 17 37 Z"/><path d="M18 18 c0 7 5 12 12 12 l2-3 -4-2 -2 2 c-2-1-4-3-5-5 l2-2 -2-4 Z"/></svg></b>Chame no WhatsApp com a lista pronta</div>
+    <div><b><svg viewBox="0 0 48 48" width="30" fill="none" stroke="#8E4A5A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="13" width="34" height="25" rx="5"/><path d="M6 20 H40 M40 24 h3 v9 h-3"/><circle cx="33" cy="28.5" r="1.6"/></svg></b>Pague no Pix e receba na hora</div>
   </div>
 </header>
 <nav class="tabs" id="tabs"></nav>
@@ -77,10 +77,10 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin:24px 0}
 </section>
 <footer>Vale o Preço? · atendimento pelo WhatsApp</footer>
 </div>
-<div class="bar" id="bar"><div class="in"><div class="tot" id="tot"></div><a id="go" href="#">Pedir no WhatsApp 💬</a></div></div>
+<div class="bar" id="bar"><div class="in"><div class="tot" id="tot"></div><a id="go" href="#">Pedir no WhatsApp</a></div></div>
 <script>
 const WA = '5511917291381';
-const CATS = [['tudo', '✨ Tudo'], ['beleza', '💅 Beleza'], ['financas', '💸 Finanças'], ['guias', '📖 Guias'], ['combos', '🎁 Combos']];
+const CATS = [['tudo', 'Tudo'], ['beleza', 'Beleza'], ['financas', 'Finanças'], ['guias', 'Guias'], ['combos', 'Combos']];
 const AG = 'Agenda do dia, calendário do mês, clientes com retorno e aniversário, botão de WhatsApp com mensagem pronta, financeiro e calculadora de quanto cobrar.';
 const P = [
   {id: 'nail', cat: 'beleza', name: 'Agenda Nail Designer', em: '💅', price: 34.9, img: 'img/nail.jpg', desc: AG, hot: 'novidade'},
@@ -103,7 +103,7 @@ const vchoice = {};
 let cat = 'tudo';
 const brl = (v) => 'R$ ' + v.toFixed(2).replace('.', ',');
 const label = (p) => p.name + (p.vars ? ' (' + (vchoice[p.id] || p.vars[0]) + ')' : '');
-const waLink = (lines, total) => 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Oi! Vi no TikTok e quero comprar:\n' + lines.join('\n') + (total ? '\nTotal: ' + brl(total) : '') + '\n\nPode me mandar o Pix? 💖');
+const waLink = (lines, total) => 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Oi! Vi no TikTok e quero comprar:\n' + lines.join('\n') + (total ? '\nTotal: ' + brl(total) : '') + '\n\nPode me mandar o Pix?');
 function tabs() {
   document.getElementById('tabs').innerHTML = CATS.map(([k, t]) => `<button class="${k === cat ? 'on' : ''}" onclick="cat='${k}';render()">${t}</button>`).join('');
 }
@@ -113,10 +113,10 @@ function card(p) {
   return `<article class="card ${sel[p.id] ? 'sel' : ''}">
     <img src="${p.img}" alt="Prévia: ${p.name}" loading="lazy">
     <div class="body">
-      <div class="name">${p.em} ${p.name}${p.hot ? `<span class="badge">${p.hot}</span>` : ''}</div>
+      <div class="name">${p.name}${p.hot ? `<span class="badge">${p.hot}</span>` : ''}</div>
       <div class="desc">${p.desc}</div>${v}
       <div class="price">${p.was ? `<s>${brl(p.was)}</s>` : ''}${brl(p.price)}</div>
-      <div class="btns"><button class="add" onclick="sel['${p.id}']=!sel['${p.id}'];render()">${sel[p.id] ? '✓ Na lista' : '+ Adicionar'}</button><a class="one" href="${one}" target="_blank" rel="noopener">Quero essa 💬</a></div>
+      <div class="btns"><button class="add" onclick="sel['${p.id}']=!sel['${p.id}'];render()">${sel[p.id] ? '✓ Na lista' : '+ Adicionar'}</button><a class="one" href="${one}" target="_blank" rel="noopener">Quero essa</a></div>
     </div></article>`;
 }
 function render() {
