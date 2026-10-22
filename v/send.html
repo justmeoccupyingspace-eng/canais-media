@@ -1,0 +1,10 @@
+<!doctype html><meta charset="utf-8"><title>envio</title>
+<p id="s">enviando…</p>
+<script>
+const f = new URLSearchParams(location.search).get('f');
+fetch(f).then(r => r.arrayBuffer()).then(buf => {
+  const t = window.opener || window.parent;
+  t.postMessage({name: f.split('/').pop(), buf}, '*', [buf]);
+  document.getElementById('s').textContent = 'ok ' + f;
+}).catch(e => { document.getElementById('s').textContent = 'erro ' + e; });
+</script>
