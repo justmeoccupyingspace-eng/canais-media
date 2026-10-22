@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vale o Preço? · Planilhas e Guias</title>
+<meta name="description" content="Planilhas prontas e guias para profissionais da beleza e para organizar o seu dinheiro. Escolha, chame no WhatsApp e receba na hora.">
+<style>
+@font-face{font-family:'Dancing Script';src:url(fonts/DancingScript-700.ttf);font-weight:700;font-display:swap}
+@font-face{font-family:Poppins;src:url(fonts/Poppins-Regular.ttf);font-weight:400;font-display:swap}
+@font-face{font-family:Poppins;src:url(fonts/Poppins-Medium.ttf);font-weight:500 600;font-display:swap}
+@font-face{font-family:Poppins;src:url(fonts/Poppins-Bold.ttf);font-weight:700;font-display:swap}
+:root{--deep:#8E4A5A;--main:#C9707D;--soft:#F3D3D8;--blush:#FBEDEF;--ink:#4A2E35;--muted:#9C7F85;--wa:#1E8E5A;--bg:#FFF7F5}
+*{box-sizing:border-box}
+body{margin:0;font-family:Poppins,Arial,sans-serif;color:var(--ink);background:radial-gradient(circle,#F3D3D877 1.3px,transparent 1.5px) 0 0/14px 14px,linear-gradient(170deg,var(--bg),var(--blush));min-height:100vh;padding-bottom:110px}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+header{text-align:center;padding:28px 0 8px}
+.logo{display:inline-block;font-weight:700;letter-spacing:3px;font-size:12px;color:#fff;background:var(--main);border-radius:30px;padding:6px 16px}
+h1{font-family:'Dancing Script',cursive;font-size:46px;line-height:1;color:var(--deep);margin:14px 0 6px}
+.sub{color:var(--muted);margin:0 0 4px;font-size:15px}
+.how{display:flex;gap:10px;margin:18px 0 6px}
+.how div{flex:1;background:#fff;border:2px solid var(--soft);border-radius:18px;padding:10px 8px;text-align:center;font-size:12.5px}
+.how b{display:block;font-size:22px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:14px 0 6px;position:sticky;top:0;background:linear-gradient(var(--bg),#fff7f5ee);z-index:5}
+.tabs button{flex:none;border:2px solid var(--soft);background:#fff;color:var(--deep);font:600 14px Poppins,Arial;border-radius:30px;padding:8px 16px;cursor:pointer}
+.tabs button.on{background:var(--main);border-color:var(--main);color:#fff}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:8px}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 10px 30px #8e4a5a1f;border:2px solid #fff;display:flex;flex-direction:column}
+.card.sel{border-color:var(--main)}
+.card img{width:100%;display:block;aspect-ratio:720/536;object-fit:cover;background:var(--blush)}
+.body{padding:12px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.name{font-weight:700;font-size:17px;color:var(--deep)}
+.desc{font-size:13.5px;color:var(--ink);opacity:.85;flex:1}
+.price{font-weight:700;font-size:24px;color:var(--deep)}
+.price s{font-size:14px;color:var(--muted);font-weight:500;margin-right:6px}
+.vars{display:flex;gap:6px;flex-wrap:wrap}
+.vars button{border:2px solid var(--soft);background:#fff;border-radius:20px;padding:4px 12px;font:500 13px Poppins,Arial;color:var(--deep);cursor:pointer}
+.vars button.on{background:var(--soft);border-color:var(--main)}
+.btns{display:flex;gap:8px}
+.add{flex:1;border:0;background:var(--blush);color:var(--deep);font:700 14px Poppins,Arial;border-radius:16px;padding:11px;cursor:pointer}
+.card.sel .add{background:var(--main);color:#fff}
+.one{flex:1;text-align:center;text-decoration:none;background:var(--wa);color:#fff;font:700 14px Poppins,Arial;border-radius:16px;padding:11px}
+.badge{display:inline-block;background:#FFF1C9;color:#8a5a00;font-size:11px;font-weight:700;border-radius:12px;padding:2px 9px;margin-left:6px;vertical-align:middle}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#fff;box-shadow:0 -8px 30px #8e4a5a26;padding:12px 16px calc(12px + env(safe-area-inset-bottom));z-index:9;transform:translateY(110%);transition:transform .25s}
+.bar.show{transform:none}
+.bar .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.bar .tot{flex:1;font-size:13px;color:var(--muted)}
+.bar .tot b{display:block;font-size:20px;color:var(--deep)}
+.bar a{background:var(--wa);color:#fff;text-decoration:none;font:700 15px Poppins,Arial;border-radius:18px;padding:13px 18px}
+.faq{margin:28px 0 10px}
+.faq details{background:#fff;border:2px solid var(--soft);border-radius:16px;padding:10px 14px;margin:8px 0}
+.faq summary{font-weight:700;color:var(--deep);cursor:pointer}
+.faq p{margin:8px 0 2px;font-size:14px}
+footer{text-align:center;color:var(--muted);font-size:12px;margin:24px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="logo">VALE O PREÇO?</span>
+  <h1>Planilhas &amp; Guias</h1>
+  <p class="sub">Prontas para usar no celular ou no computador ✨</p>
+  <div class="how">
+    <div><b>💖</b>Escolha o que quer</div>
+    <div><b>💬</b>Chame no WhatsApp com a lista pronta</div>
+    <div><b>⚡</b>Pague no Pix e receba na hora</div>
+  </div>
+</header>
+<nav class="tabs" id="tabs"></nav>
+<main class="grid" id="grid"></main>
+<section class="faq">
+  <details><summary>Como eu recebo?</summary><p>Você toca em pedir, a mensagem já vai pronta para o WhatsApp. Eu te passo o Pix e, assim que confirmar, mando o arquivo ali mesmo.</p></details>
+  <details><summary>Funciona no celular?</summary><p>Sim. As planilhas abrem no Excel (celular e computador) e no Google Planilhas. Os guias são em PDF.</p></details>
+  <details><summary>É mensalidade?</summary><p>Não. Você paga uma vez e a planilha é sua.</p></details>
+  <details><summary>Eu não entendo nada de planilha. Consigo usar?</summary><p>Consegue. Ela já vem pronta: você só preenche as células brancas e o resto ela calcula sozinha. Tem um passo a passo na primeira aba.</p></details>
+</section>
+<footer>Vale o Preço? · atendimento pelo WhatsApp</footer>
+</div>
+<div class="bar" id="bar"><div class="in"><div class="tot" id="tot"></div><a id="go" href="#">Pedir no WhatsApp 💬</a></div></div>
+<script>
+const WA = '5511917291381';
+const CATS = [['tudo', '✨ Tudo'], ['beleza', '💅 Beleza'], ['financas', '💸 Finanças'], ['guias', '📖 Guias'], ['combos', '🎁 Combos']];
+const AG = 'Agenda do dia, calendário do mês, clientes com retorno e aniversário, botão de WhatsApp com mensagem pronta, financeiro e calculadora de quanto cobrar.';
+const P = [
+  {id: 'nail', cat: 'beleza', name: 'Agenda Nail Designer', em: '💅', price: 34.9, img: 'img/nail.jpg', desc: AG, hot: 'novidade'},
+  {id: 'lash', cat: 'beleza', name: 'Agenda Lash Designer', em: '✨', price: 34.9, img: 'img/lash.jpg', desc: AG},
+  {id: 'brow', cat: 'beleza', name: 'Agenda Designer de Sobrancelhas', em: '✨', price: 34.9, img: 'img/brow.jpg', desc: AG},
+  {id: 'hair', cat: 'beleza', name: 'Agenda Salão & Cabeleireira', em: '✂️', price: 34.9, img: 'img/hair.jpg', desc: AG},
+  {id: 'estetica', cat: 'beleza', name: 'Agenda Estética & Depilação', em: '🌿', price: 34.9, img: 'img/estetica.jpg', desc: AG},
+  {id: 'barber', cat: 'beleza', name: 'Agenda Barbearia', em: '💈', price: 34.9, img: 'img/barber.jpg', desc: 'Agenda do dia, calendário, clientes com retorno no WhatsApp, caixa, despesas, lucro e quanto cobrar por serviço.'},
+  {id: 'pet', cat: 'beleza', name: 'Agenda Banho & Tosa', em: '🐾', price: 34.9, img: 'img/pet.jpg', desc: 'Agenda do dia, calendário, tutores e pets com retorno do banho (a mensagem sai com o nome do pet), caixa e quanto cobrar.'},
+  {id: 'fin', cat: 'financas', name: 'Controle Financeiro', em: '💸', price: 19.9, img: 'img/financeiro.jpg', vars: ['Rosé', 'Verde', 'Azul'], desc: 'Lançamentos rápidos, resumo do mês com alerta de limite, orçamento, visão do ano, metas e plano para sair das dívidas.'},
+  {id: 'contas', cat: 'financas', name: 'Calendário de Contas 2027', em: '📅', price: 14.9, img: 'img/contas.jpg', vars: ['Rosé', 'Verde'], desc: 'Todas as contas do ano num calendário, controle de pago e atrasado e os feriados de 2027.'},
+  {id: 'guia-nail', cat: 'guias', name: 'Guia: Comece na Nail sem medo', em: '📖', price: 19.9, img: 'img/guia-nail.jpg', desc: 'Apostila em PDF: kit inicial em checklist, biossegurança, passo a passo da mão completa, gel básico, quanto cobrar, primeiras clientes e mensagens prontas.'},
+  {id: 'combo-nail', cat: 'combos', name: 'Combo Nail: Agenda + Guia', em: '🎁', price: 44.9, was: 54.8, img: 'img/nail.jpg', desc: 'A Agenda Nail Designer e o Guia Comece na Nail sem medo juntos, com desconto.'},
+  {id: 'combo-fin', cat: 'combos', name: 'Combo Finanças: Controle + Contas 2027', em: '🎁', price: 27.9, was: 34.8, img: 'img/financeiro.jpg', vars: ['Rosé', 'Verde'], desc: 'Controle Financeiro e Calendário de Contas 2027 na mesma cor, com desconto.'},
+];
+const sel = {};
+const vchoice = {};
+let cat = 'tudo';
+const brl = (v) => 'R$ ' + v.toFixed(2).replace('.', ',');
+const label = (p) => p.name + (p.vars ? ' (' + (vchoice[p.id] || p.vars[0]) + ')' : '');
+const waLink = (lines, total) => 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Oi! Vi no TikTok e quero comprar:\n' + lines.join('\n') + (total ? '\nTotal: ' + brl(total) : '') + '\n\nPode me mandar o Pix? 💖');
+function tabs() {
+  document.getElementById('tabs').innerHTML = CATS.map(([k, t]) => `<button class="${k === cat ? 'on' : ''}" onclick="cat='${k}';render()">${t}</button>`).join('');
+}
+function card(p) {
+  const v = p.vars ? `<div class="vars">${p.vars.map((x) => `<button class="${(vchoice[p.id] || p.vars[0]) === x ? 'on' : ''}" onclick="vchoice['${p.id}']='${x}';render()">${x}</button>`).join('')}</div>` : '';
+  const one = waLink(['• ' + label(p) + ' — ' + brl(p.price)], 0);
+  return `<article class="card ${sel[p.id] ? 'sel' : ''}">
+    <img src="${p.img}" alt="Prévia: ${p.name}" loading="lazy">
+    <div class="body">
+      <div class="name">${p.em} ${p.name}${p.hot ? `<span class="badge">${p.hot}</span>` : ''}</div>
+      <div class="desc">${p.desc}</div>${v}
+      <div class="price">${p.was ? `<s>${brl(p.was)}</s>` : ''}${brl(p.price)}</div>
+      <div class="btns"><button class="add" onclick="sel['${p.id}']=!sel['${p.id}'];render()">${sel[p.id] ? '✓ Na lista' : '+ Adicionar'}</button><a class="one" href="${one}" target="_blank" rel="noopener">Quero essa 💬</a></div>
+    </div></article>`;
+}
+function render() {
+  tabs();
+  document.getElementById('grid').innerHTML = P.filter((p) => cat === 'tudo' || p.cat === cat).map(card).join('');
+  const chosen = P.filter((p) => sel[p.id]);
+  const total = chosen.reduce((s, p) => s + p.price, 0);
+  const bar = document.getElementById('bar');
+  bar.classList.toggle('show', chosen.length > 0);
+  document.getElementById('tot').innerHTML = `${chosen.length} ${chosen.length === 1 ? 'item' : 'itens'}<b>${brl(total)}</b>`;
+  document.getElementById('go').href = waLink(chosen.map((p) => '• ' + label(p) + ' — ' + brl(p.price)), total);
+}
+render();
+</script>
+</body>
+</html>
